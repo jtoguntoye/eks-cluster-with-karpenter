@@ -1,17 +1,3 @@
-terraform {
-    backend "s3" {
-        bucket = "cityallies-newbucket" 
-        key = "aws-terraform-vpc-dev-tfstate"
-        region = "us-east-1"
-    }
-
-    required_providers {
-      aws = {
-          source = "hashicorp/aws"
-      }
-    }
-}
-
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 
@@ -84,4 +70,3 @@ resource "aws_route_table_association" "b" {
   subnet_id      = aws_subnet.pubsub2.id
   route_table_id = aws_route_table.rt.id
 }
-

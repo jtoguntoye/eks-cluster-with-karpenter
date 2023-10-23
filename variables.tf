@@ -1,4 +1,4 @@
-var "environment" {
+variable "environment" {
 type = string
 default = "dev"
 }
